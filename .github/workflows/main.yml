@@ -1,0 +1,77 @@
+# This is a basic workflow to help you get started with Actions
+name: Extension CI/CD
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: [push]
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Install checkout
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: sudo apt install jq -y
+
+      - name: Build Vue application
+        run: |
+          cd frontend
+          pnpm install
+          pnpm build
+          cd ..
+          rm -rf frontend
+          rm -rf .git
+          rm -rf .github
+          echo "$(jq '.version = "${{ github.run_number }}"' <<< cat db.json)" > db.json
+          echo "$(jq '.version_code = ${{ github.run_number }}' <<< cat db.json)" > db.json
+          rm -f .gitignore
+
+          [ "$GITHUB_REF" == "refs/heads/master" ] && PRERELEASE=false || PRERELEASE=true
+          echo "PRERELEASE=$(echo $PRERELEASE)" >> $GITHUB_ENV
+          echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+
+      - name: Create zip
+        run: |
+          zip -r /tmp/extension-${{ env.BRANCH }}-${{ github.run_number }}.zip .
+
+      - name: Release 🚀
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          files: /tmp/extension-${{ env.BRANCH }}-${{ github.run_number }}.zip
+          name: "Release ${{ env.BRANCH }} ${{ github.run_number }}"
+          tag_name: "release.${{ env.BRANCH }}.${{ github.run_number }}"
+          prerelease: ${{ env.PRERELEASE }}

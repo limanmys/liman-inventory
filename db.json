@@ -1,0 +1,36 @@
+{
+  "name": "inventory",
+  "publisher": "HAVELSAN A.\u015e.",
+  "version": "DEV",
+  "version_code": 1,
+  "database": [],
+  "widgets": [],
+  "language": "php",
+  "status": 0,
+  "service": "8080",
+  "supportedLiman": "635",
+  "support": "aciklab@havelsan.com.tr",
+  "icon": "box-open",
+  "require_key": "false",
+  "verification": "verify",
+  "dependencies": null,
+  "sslPorts": null,
+  "display_name": {
+    "tr": "Envanter Keşif",
+    "en": "Inventory Explorer"
+  },
+  "functions": [],
+  "vite": true,
+  "skeleton": true,
+  "preload": true,
+  "menus": [
+    {
+      "name": {
+        "tr": "Varlıklar",
+        "en": "Assets"
+      },
+      "url": "#/machines",
+      "key": "assets"
+    }
+  ]
+}

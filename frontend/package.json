@@ -1,0 +1,51 @@
+{
+  "name": "liman-vue3-typescript",
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "rimraf ../public/vite && run-p type-check build-only",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "0.8.1",
+    "@vueuse/core": "^10.7.0",
+    "apexcharts": "^3.44.2",
+    "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
+    "js-file-download": "^0.4.12",
+    "lodash": "^4.17.21",
+    "mitt": "^3.0.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.11",
+    "vue-error-boundary": "^2.0.1",
+    "vue-i18n": "^9.8.0",
+    "vue-router": "^4.2.5",
+    "vue3-apexcharts": "^1.4.4"
+  },
+  "devDependencies": {
+    "@nabla/vite-plugin-eslint": "^2.0.2",
+    "@rollup/plugin-inject": "^5.0.5",
+    "@rushstack/eslint-patch": "^1.6.0",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/jquery": "^3.5.29",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.4",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "naive-ui": "^2.35.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
+    "typescript": "~5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-mkcert": "^1.17.1",
+    "vue-tsc": "^1.8.25"
+  }
+}
