@@ -28,6 +28,9 @@
     "table": {
       "hostname": "Hostname",
       "address": "Adres",
+      "vendor": "Üretici",
+      "model": "Model",
+      "serial_number": "Seri Numarası",
       "updated_at": "Güncellenme Tarihi"
     },
     "fetch": {
@@ -122,6 +125,19 @@
       "messages": {
         "success": "Keşif başarıyla silindi.",
         "error": "Keşif silinirken bir hata oluştu."
+      }
+    }
+  },
+  "package": {
+    "title": "Paketler",
+    "description": "Paketlerinizi ve yüklü oldukları makine sayılarını görüntüleyebilirsiniz.",
+    "table": {
+      "name": "Adı",
+      "count": "Makine Sayısı"
+    },
+    "fetch": {
+      "messages": {
+        "error": "Paketler getirilirken bir hata oluştu."
       }
     }
   }

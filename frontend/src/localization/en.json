@@ -28,6 +28,9 @@
     "table": {
       "hostname": "Hostname",
       "address": "Address",
+      "vendor": "Vendor",
+      "model": "Model",
+      "serial_number": "Serial Number",
       "updated_at": "Updated At"
     },
     "fetch": {
@@ -128,6 +131,19 @@
       "messages": {
         "success": "Discovery deleted successfully.",
         "error": "An error occurred while deleting discovery."
+      }
+    }
+  },
+  "package": {
+    "title": "Packages",
+    "description": "You can view your packages and their machine counts here.",
+    "table": {
+      "name": "Name",
+      "count": "Machine Count"
+    },
+    "fetch": {
+      "messages": {
+        "error": "An error occurred while fetching packages."
       }
     }
   }

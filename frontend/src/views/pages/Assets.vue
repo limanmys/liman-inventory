@@ -5,6 +5,8 @@ import AsyncStore from "@/components/Table/AsyncStore.vue"
 import type { IColumn } from "@/models/Column"
 import { useAssetStore } from "@/stores/asset"
 import Header from "@/components/UIElements/Header.vue"
+import type { IAsset } from "@/models/Asset"
+import { h } from "vue"
 
 const { t } = useI18n()
 const store = useAssetStore()
@@ -19,10 +21,43 @@ const columns: IColumn[] = reactive([
     ellipsis: {
       tooltip: true,
     },
+    render: (row: IAsset) => {
+      return [h("i", { class: "fab fa-windows mr-2" }), row.hostname]
+    },
   },
   {
     title: t("asset.table.address"),
     key: "address",
+    filterable: true,
+    sorter: "default",
+    resizable: true,
+    ellipsis: {
+      tooltip: true,
+    },
+  },
+  {
+    title: t("asset.table.vendor"),
+    key: "vendor",
+    filterable: true,
+    sorter: "default",
+    resizable: true,
+    ellipsis: {
+      tooltip: true,
+    },
+  },
+  {
+    title: t("asset.table.model"),
+    key: "model",
+    filterable: true,
+    sorter: "default",
+    resizable: true,
+    ellipsis: {
+      tooltip: true,
+    },
+  },
+  {
+    title: t("asset.table.serial_number"),
+    key: "serial_number",
     filterable: true,
     sorter: "default",
     resizable: true,

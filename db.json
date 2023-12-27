@@ -34,6 +34,14 @@
     },
     {
       "name": {
+        "tr": "Paketler",
+        "en": "Packages"
+      },
+      "url": "#/packages",
+      "key": "packages"
+    },
+    {
+      "name": {
         "tr": "Keşifler",
         "en": "Discoveries"
       },
