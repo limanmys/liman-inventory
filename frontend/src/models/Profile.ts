@@ -1,12 +1,14 @@
+import type { IDiscovery } from "./Discovery"
+
 export interface IProfile {
   id: string
   created_at: string
   updated_at: string
-  deleted_at: any
+  deleted_at: string
   name: string
   username: string
   password: string
-  discoveries: any[]
+  discoveries: IDiscovery[]
 }
 
 export interface IProfileCreate {

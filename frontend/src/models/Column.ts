@@ -7,13 +7,13 @@ export interface IColumn {
   ellipsis?: {
     tooltip: boolean
   }
-  render?: (record: any) => JSX.Element
+  render?: (record: any) => any
   type?: string
   options?: string[]
-  filter?: (value: any) => boolean
+  filter?: (value: any, row: any) => boolean
   filterOptions?: any
   customFilter?: boolean
   defaultFilterOptionValues?: any
-  renderExpand?: (record: any) => JSX.Element
+  renderExpand?: (record: any) => any
   resizable?: boolean
 }

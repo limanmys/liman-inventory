@@ -7,6 +7,7 @@ import ProfileModal from "@/views/modals/Profile.vue"
 import { useProfileStore } from "@/stores/profile"
 import useEmitter from "@/utils/emitter"
 import type { IColumn } from "@/models/Column"
+import type { IProfile } from "@/models/Profile"
 import Header from "@/components/UIElements/Header.vue"
 
 const { t } = useI18n()
@@ -37,7 +38,7 @@ const columns: IColumn[] = reactive([
   {
     key: "actions",
     width: 40,
-    render: (row: any) => {
+    render: (row: IProfile) => {
       return h(DropdownMenu, {
         options: [
           {

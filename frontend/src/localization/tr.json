@@ -43,6 +43,9 @@
       "name": "Ad",
       "updated_at": "Güncellenme Tarihi"
     },
+    "select": {
+      "placeholder": "Profil aramak için yazın"
+    },
     "fetch": {
       "messages": {
         "error": "Profiller getirilirken bir hata oluştu."
@@ -76,6 +79,49 @@
       "messages": {
         "success": "Profil başarıyla silindi.",
         "error": "Profil silinirken bir hata oluştu."
+      }
+    }
+  },
+  "discovery": {
+    "title": "Keşifler",
+    "description": "Burada yeni bir keşif başlatabilir veya önceki keşiflerinizi görüntüleyebilirsiniz.",
+    "table": {
+      "ip_range": "IP Aralığı",
+      "profile": "Profil",
+      "discovery_status": "Keşif Durumu",
+      "message": "Mesaj",
+      "updated_at": "Son Tarama"
+    },
+    "fetch": {
+      "messages": {
+        "error": "Keşifler getirilirken bir hata oluştu."
+      }
+    },
+    "create": {
+      "title": "Keşif Oluştur",
+      "inputs": {
+        "ip_range": "IP Aralığı",
+        "profile": "Profil"
+      },
+      "rules": {
+        "ip_range": "IP Aralığı zorunludur.",
+        "profile": "Profil zorunludur."
+      },
+      "messages": {
+        "success": "Keşif başarıyla oluşturuldu.",
+        "error": "Keşif oluşturulurken bir hata oluştu."
+      }
+    },
+    "run": {
+      "messages": {
+        "success": "Tarama başarıyla başlatıldı.",
+        "error": "Tarama başlatılırken bir hata oluştu."
+      }
+    },
+    "delete": {
+      "messages": {
+        "success": "Keşif başarıyla silindi.",
+        "error": "Keşif silinirken bir hata oluştu."
       }
     }
   }

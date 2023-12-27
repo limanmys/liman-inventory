@@ -43,6 +43,9 @@
       "name": "Name",
       "updated_at": "Updated At"
     },
+    "select": {
+      "placeholder": "Type to search profile"
+    },
     "fetch": {
       "messages": {
         "error": "An error occurred while fetching profiles."
@@ -76,6 +79,55 @@
       "messages": {
         "success": "Profile deleted successfully.",
         "error": "An error occurred while deleting profile."
+      }
+    }
+  },
+  "discovery": {
+    "title": "Discoveries",
+    "description": "You can start a new discovery or view your previous discoveries here.",
+    "table": {
+      "ip_range": "IP Range",
+      "profile": "Profile",
+      "discovery_status": "Discovery Status",
+      "message": "Message",
+      "updated_at": "Last Scan"
+    },
+    "status": {
+      "pending": "Pending",
+      "in_progress": "In Progress",
+      "done": "Done",
+      "error": "Error"
+    },
+    "fetch": {
+      "messages": {
+        "error": "An error occurred while fetching discoveries."
+      }
+    },
+    "create": {
+      "title": "Create Discovery",
+      "inputs": {
+        "ip_range": "IP Range",
+        "profile": "Profile"
+      },
+      "rules": {
+        "ip_range": "IP Range is required.",
+        "profile": "Profile is required."
+      },
+      "messages": {
+        "success": "Discovery created successfully.",
+        "error": "An error occurred while creating discovery."
+      }
+    },
+    "run": {
+      "messages": {
+        "success": "Scan started successfully.",
+        "error": "An error occurred while starting scan."
+      }
+    },
+    "delete": {
+      "messages": {
+        "success": "Discovery deleted successfully.",
+        "error": "An error occurred while deleting discovery."
       }
     }
   }

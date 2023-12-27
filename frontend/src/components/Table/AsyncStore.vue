@@ -184,16 +184,16 @@ const handlePageChange = (currentPage: any) => {
   query(currentPage)
 }
 
-const handleFilterChange = (filters: any) => {
+const handleFilterChange = (filter: any) => {
   loading.value = true
-  Object.keys(filters).forEach((item) => {
+  Object.keys(filter).forEach((item) => {
     filters.value = filters.value.filter((i: IData) => {
       return i.key != item
     })
-    if (filters[item] && filters[item].length > 0) {
+    if (filter[item] && filter[item].length > 0) {
       filters.value.push({
         key: item,
-        value: filters[item],
+        value: filter[item],
       })
     }
   })

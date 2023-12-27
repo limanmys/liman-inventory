@@ -1,7 +1,7 @@
 import { format } from "date-fns"
 import { tr, enUS } from "date-fns/locale"
 
-const formatDate = (time: any) => {
+const formatDate = (time: string) => {
   return format(new Date(time), "dd MMMM yyyy HH:mm", {
     locale: document.documentElement.lang == "tr" ? tr : enUS,
   })
