@@ -7,6 +7,7 @@ module.exports = {
     "plugin:vue/vue3-essential",
     "eslint:recommended",
     "@vue/eslint-config-typescript/recommended",
+    "plugin:@intlify/vue-i18n/recommended",
   ],
   rules: {
     semi: ["error", "never"],
@@ -15,5 +16,11 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: "latest",
+  },
+  settings: {
+    "vue-i18n": {
+      localeDir: "./src/localization/en.json", // extension is glob formatting!
+      messageSyntaxVersion: "^9.0.0",
+    },
   },
 }

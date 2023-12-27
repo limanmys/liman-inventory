@@ -26,6 +26,7 @@
     "vue3-apexcharts": "^1.4.4"
   },
   "devDependencies": {
+    "@intlify/eslint-plugin-vue-i18n": "^2.0.0",
     "@nabla/vite-plugin-eslint": "^2.0.2",
     "@rollup/plugin-inject": "^5.0.5",
     "@rushstack/eslint-patch": "^1.6.0",
