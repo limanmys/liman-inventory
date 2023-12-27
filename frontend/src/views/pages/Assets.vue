@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import AsyncStore from "@/components/Table/AsyncStore.vue"
-import { useAssetStore } from "@/stores/asset"
-import { ref } from "vue"
+import { reactive } from "vue"
 import { useI18n } from "vue-i18n"
+import AsyncStore from "@/components/Table/AsyncStore.vue"
+import type { IColumn } from "@/models/Column"
+import { useAssetStore } from "@/stores/asset"
 
 const { t } = useI18n()
 const store = useAssetStore()
 
-const columns = ref([
+const columns: IColumn[] = reactive([
   {
     title: t("asset.table.hostname"),
     key: "hostname",
-    filterable: "true",
+    filterable: true,
     sorter: "default",
     resizable: true,
     ellipsis: {
@@ -21,7 +22,7 @@ const columns = ref([
   {
     title: t("asset.table.address"),
     key: "address",
-    filterable: "true",
+    filterable: true,
     sorter: "default",
     resizable: true,
     ellipsis: {
@@ -31,7 +32,6 @@ const columns = ref([
   {
     title: t("asset.table.updated_at"),
     key: "updated_at",
-    filterable: "true",
     sorter: "default",
     type: "date",
     resizable: true,

@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import("@/views/pages/Assets.vue"),
     },
     {
+      path: "/profiles",
+      name: "profiles",
+      component: () => import("@/views/pages/Profiles.vue"),
+    },
+    {
       path: "/error",
       name: "error",
       component: () => import("@/views/layouts/Errors.vue"),

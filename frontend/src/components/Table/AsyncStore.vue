@@ -1,14 +1,14 @@
 <script setup lang="ts">
+import { computed, h, onMounted, reactive, ref, toRefs, watch } from "vue"
+import { useI18n } from "vue-i18n"
+import { useRoute } from "vue-router"
+import { isEqual } from "lodash"
+import { NButton, NDataTable, NInput, NSpace } from "naive-ui"
 import ColumnSelector from "@/components/Table/ColumnSelector.vue"
 import type { IData } from "@/models/Data"
 import type { IFilter } from "@/models/Filter"
 import type { IPaginator } from "@/models/Paginator"
 import { formatDate } from "@/utils/format-date"
-import { NButton, NDataTable, NInput, NSpace } from "naive-ui"
-import { computed, h, onMounted, reactive, ref, toRefs, watch } from "vue"
-import { useI18n } from "vue-i18n"
-import { useRoute } from "vue-router"
-import { isEqual } from "lodash"
 
 export interface Props {
   dispatcher: (payload?: IFilter, ...args: any) => Promise<any>
@@ -75,7 +75,7 @@ columns.value.forEach((column, i) => {
                 size: "tiny",
                 "on-click": () => {
                   const filterInput: any = document.querySelector(
-                    "#" + escapeSelector(column.key) + "-filter input"
+                    "#" + escapeSelector(column.key) + "-filter input",
                   )
                   filterInput.value = ""
                   columns.value[i].filterOptionValue = null
@@ -92,7 +92,7 @@ columns.value.forEach((column, i) => {
                 type: "primary",
                 "on-click": () => {
                   const filterInput: any = document.querySelector(
-                    "#" + escapeSelector(column.key) + "-filter input"
+                    "#" + escapeSelector(column.key) + "-filter input",
                   )
 
                   if (filterInput.value.length > 0) {
@@ -113,9 +113,9 @@ columns.value.forEach((column, i) => {
                     hide()
                   }
                 },
-                innerHTML: t("common.approve"),
+                innerHTML: t("table.filter.apply"),
               }),
-            ]
+            ],
           ),
         ])
       },
@@ -239,7 +239,7 @@ watch(
     pagination.page = props.data.current_page
     pagination.pageCount = props.data.total_pages
     pagination.itemCount = props.data.total_records
-  }
+  },
 )
 
 const refresh = () => {
@@ -252,7 +252,7 @@ watch(
     if (!isEqual(newVal, oldVal)) {
       query()
     }
-  }
+  },
 )
 
 const emit = defineEmits<{
@@ -290,15 +290,15 @@ const selectedKeys = computed({
           "
         >
           <template #prefix>
-            <i class="fas fa-search mr-1"></i>
+            <i class="fas fa-search mr-1" />
           </template>
         </n-input>
 
         <n-tooltip trigger="hover">
           <template #trigger>
             <n-button ghost @click="refresh()"
-              ><i class="fas fa-sync"></i
-            ></n-button>
+              ><i class="fas fa-sync" />
+            </n-button>
           </template>
           {{ t("common.refresh") }}
         </n-tooltip>

@@ -21,9 +21,9 @@ const reload = () => {
 
     <center>
       <n-button type="primary" @click="reload()"
-        ><i class="fa-solid fa-sync mr-2"></i
-        >{{ t("common.refresh") }}</n-button
-      >
+        ><i class="fa-solid fa-sync mr-2" />
+        {{ t("common.refresh") }}
+      </n-button>
     </center>
 
     <br />

@@ -1,1 +1,78 @@
-{}
+{
+  "common": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "create": "Create",
+    "save": "Save",
+    "refresh": "Refresh",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "yes": "Yes",
+    "no": "No",
+    "are_you_sure": "Are you sure you want to proceed with the operation?"
+  },
+  "table": {
+    "search": {
+      "placeholder": "Search"
+    },
+    "filter": {
+      "placeholder": "Filter",
+      "clear": "Clear",
+      "apply": "Apply"
+    }
+  },
+  "asset": {
+    "table": {
+      "hostname": "Hostname",
+      "address": "Address",
+      "updated_at": "Updated At"
+    },
+    "fetch": {
+      "messages": {
+        "error": "An error occurred while fetching assets."
+      }
+    }
+  },
+  "profile": {
+    "table": {
+      "name": "Name",
+      "updated_at": "Updated At"
+    },
+    "fetch": {
+      "messages": {
+        "error": "An error occurred while fetching profiles."
+      }
+    },
+    "create": {
+      "title": "Create Profile",
+      "inputs": {
+        "name": "Name",
+        "username": "Username",
+        "password": "Password"
+      },
+      "rules": {
+        "name": "Name is required.",
+        "username": "Username is required.",
+        "password": "Password is required."
+      },
+      "messages": {
+        "success": "Profile created successfully.",
+        "error": "An error occurred while creating profile."
+      }
+    },
+    "update": {
+      "title": "Update Profile",
+      "messages": {
+        "success": "Profile updated successfully.",
+        "error": "An error occurred while updating profile."
+      }
+    },
+    "delete": {
+      "messages": {
+        "success": "Profile deleted successfully.",
+        "error": "An error occurred while deleting profile."
+      }
+    }
+  }
+}

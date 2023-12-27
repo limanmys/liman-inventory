@@ -1,9 +1,9 @@
+import { defineStore } from "pinia"
+import { i18n } from "@/utils/i18n"
+import http from "@/utils/http-common"
 import type { IAsset } from "@/models/Asset"
 import type { IFilter } from "@/models/Filter"
 import type { IPaginator } from "@/models/Paginator"
-import http from "@/utils/http-common"
-import { i18n } from "@/utils/i18n"
-import { defineStore } from "pinia"
 
 export const useAssetStore = defineStore({
   id: "asset",
@@ -24,26 +24,17 @@ export const useAssetStore = defineStore({
       }
       const query = new URLSearchParams(q as Record<string, string>).toString()
 
-      return http
-        .get(`assets/?${query}`)
-        .then((res) => {
-          if (res.status == 200) {
-            this.assets = res.data
-          } else {
-            window.$notification.error({
-              title: i18n.t("common.error"),
-              content: i18n.t("asset.get.messages.error"),
-              duration: 5000,
-            })
-          }
-        })
-        .catch(() => {
+      return http.get(`assets/?${query}`).then((res) => {
+        if (res.status == 200) {
+          this.assets = res.data
+        } else {
           window.$notification.error({
             title: i18n.t("common.error"),
-            content: i18n.t("asset.get.messages.error"),
+            content: i18n.t("asset.fetch.messages.error"),
             duration: 5000,
           })
-        })
+        }
+      })
     },
   },
 })

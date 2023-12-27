@@ -29,8 +29,16 @@
         "tr": "Varlıklar",
         "en": "Assets"
       },
-      "url": "#/machines",
+      "url": "#/assets",
       "key": "assets"
+    },
+    {
+      "name": {
+        "tr": "Profiller",
+        "en": "Profiles"
+      },
+      "url": "#/profiles",
+      "key": "profiles"
     }
   ]
 }

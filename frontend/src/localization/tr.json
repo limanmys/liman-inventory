@@ -1,1 +1,78 @@
-{}
+{
+  "common": {
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "create": "Oluştur",
+    "save": "Kaydet",
+    "refresh": "Yenile",
+    "success": "Başarılı",
+    "error": "Hata",
+    "warning": "Uyarı",
+    "yes": "Evet",
+    "no": "Hayır",
+    "are_you_sure": "İşlemi gerçekleştirmek istediğinizden emin misiniz?"
+  },
+  "table": {
+    "search": {
+      "placeholder": "Ara"
+    },
+    "filter": {
+      "placeholder": "Filtrele",
+      "clear": "Temizle",
+      "apply": "Uygula"
+    }
+  },
+  "asset": {
+    "table": {
+      "hostname": "Hostname",
+      "address": "Adres",
+      "updated_at": "Güncellenme Tarihi"
+    },
+    "fetch": {
+      "messages": {
+        "error": "Varlıklar getirilirken bir hata oluştu."
+      }
+    }
+  },
+  "profile": {
+    "table": {
+      "name": "Ad",
+      "updated_at": "Güncellenme Tarihi"
+    },
+    "fetch": {
+      "messages": {
+        "error": "Profiller getirilirken bir hata oluştu."
+      }
+    },
+    "create": {
+      "title": "Profil Oluştur",
+      "inputs": {
+        "name": "Ad",
+        "username": "Kullanıcı Adı",
+        "password": "Parola"
+      },
+      "rules": {
+        "name": "Ad alanı zorunludur.",
+        "username": "Kullanıcı adı alanı zorunludur.",
+        "password": "Parola alanı zorunludur."
+      },
+      "messages": {
+        "success": "Profil başarıyla oluşturuldu.",
+        "error": "Profil oluşturulurken bir hata oluştu."
+      }
+    },
+    "update": {
+      "title": "Profil Güncelle",
+      "messages": {
+        "success": "Profil başarıyla güncellendi.",
+        "error": "Profil güncellenirken bir hata oluştu."
+      }
+    },
+    "delete": {
+      "messages": {
+        "success": "Profil başarıyla silindi.",
+        "error": "Profil silinirken bir hata oluştu."
+      }
+    }
+  }
+}

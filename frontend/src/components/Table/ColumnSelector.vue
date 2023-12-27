@@ -40,9 +40,9 @@ function render() {
               emit("change", columns.value)
             },
           })
-        })
+        }),
       ),
-    ]
+    ],
   )
 }
 
@@ -63,6 +63,6 @@ const emit = defineEmits<{
       },
     ]"
   >
-    <n-button type="primary"><i class="fas fa-cogs"></i></n-button>
+    <n-button type="primary"><i class="fas fa-cogs" /></n-button>
   </n-dropdown>
 </template>
