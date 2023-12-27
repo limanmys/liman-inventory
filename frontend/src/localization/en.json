@@ -23,6 +23,8 @@
     }
   },
   "asset": {
+    "title": "Assets",
+    "description": "You can monitor your discovered assets here.",
     "table": {
       "hostname": "Hostname",
       "address": "Address",
@@ -35,6 +37,8 @@
     }
   },
   "profile": {
+    "title": "Profiles",
+    "description": "You can perform different operations on your profiles such as create, update and delete.",
     "table": {
       "name": "Name",
       "updated_at": "Updated At"

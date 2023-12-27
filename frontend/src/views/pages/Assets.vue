@@ -4,6 +4,7 @@ import { useI18n } from "vue-i18n"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import type { IColumn } from "@/models/Column"
 import { useAssetStore } from "@/stores/asset"
+import Header from "@/components/UIElements/Header.vue"
 
 const { t } = useI18n()
 const store = useAssetStore()
@@ -43,5 +44,6 @@ const columns: IColumn[] = reactive([
 </script>
 
 <template>
+  <Header :title="t('asset.title')" :description="t('asset.description')" />
   <AsyncStore :dispatcher="store.fetch" :data="store.get" :columns="columns" />
 </template>

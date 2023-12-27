@@ -23,6 +23,8 @@
     }
   },
   "asset": {
+    "title": "Varlıklar",
+    "description": "Keşfedilen varlıklarınızı görüntüleyin.",
     "table": {
       "hostname": "Hostname",
       "address": "Adres",
@@ -35,6 +37,8 @@
     }
   },
   "profile": {
+    "title": "Profiller",
+    "description": "Profil oluşturma, güncelleme ve silme gibi farklı işlemler gerçekleştirebilirsiniz.",
     "table": {
       "name": "Ad",
       "updated_at": "Güncellenme Tarihi"

@@ -29,9 +29,9 @@ export const useProfileStore = defineStore({
           this.profiles = res.data
         } else {
           window.$notification.error({
-            duration: 5000,
             title: i18n.t("common.error"),
             content: i18n.t("profile.fetch.messages.error"),
+            duration: 5000,
           })
         }
       })
@@ -51,9 +51,9 @@ export const useProfileStore = defineStore({
             this.fetch()
           } else {
             window.$notification.error({
-              duration: 5000,
               title: i18n.t("common.error"),
               content: i18n.t("profile.create.messages.error"),
+              duration: 5000,
             })
           }
         })
@@ -73,9 +73,9 @@ export const useProfileStore = defineStore({
             this.fetch()
           } else {
             window.$notification.error({
-              duration: 5000,
               title: i18n.t("common.error"),
               content: i18n.t("profile.update.messages.error"),
+              duration: 5000,
             })
           }
         })
@@ -97,9 +97,9 @@ export const useProfileStore = defineStore({
               this.fetch()
             } else {
               window.$notification.error({
-                duration: 5000,
                 title: i18n.t("common.error"),
                 content: i18n.t("profile.delete.messages.error"),
+                duration: 5000,
               })
             }
           })

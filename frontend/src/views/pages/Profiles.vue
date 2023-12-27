@@ -7,6 +7,7 @@ import ProfileModal from "@/views/modals/Profile.vue"
 import { useProfileStore } from "@/stores/profile"
 import useEmitter from "@/utils/emitter"
 import type { IColumn } from "@/models/Column"
+import Header from "@/components/UIElements/Header.vue"
 
 const { t } = useI18n()
 const store = useProfileStore()
@@ -67,9 +68,11 @@ const columns: IColumn[] = reactive([
 </script>
 
 <template>
+  <Header :title="t('profile.title')" :description="t('profile.description')" />
   <AsyncStore :dispatcher="store.fetch" :data="store.get" :columns="columns">
     <template #buttons>
       <n-button type="primary" @click="emitter.emit('showProfileModal')">
+        <i class="fas fa-plus mr-2" />
         {{ t("profile.create.title") }}
       </n-button>
     </template>
