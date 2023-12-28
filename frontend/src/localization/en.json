@@ -11,6 +11,8 @@
     "yes": "Yes",
     "no": "No",
     "are_you_sure": "Are you sure you want to proceed with the operation?",
+    "show_all": "Show All",
+    "last_week": "(Last Week)",
     "status": {
       "pending": "Pending",
       "in_progress": "In Progress",
@@ -26,6 +28,41 @@
       "placeholder": "Filter",
       "clear": "Clear",
       "apply": "Apply"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "You can see the overall status of your system from here.",
+    "assets": {
+      "title": "Number of Assets",
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching number of assets."
+        }
+      }
+    },
+    "discoveries": {
+      "title": "Number of Discoveries",
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching number of discoveries."
+        }
+      }
+    },
+    "packages": {
+      "title": "Number of Packages",
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching number of packages."
+        }
+      }
+    },
+    "added_assets": {
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching last added assets."
+        }
+      }
     }
   },
   "asset": {
@@ -173,7 +210,7 @@
       "message": "Message",
       "created_at": "Created At"
     },
-    "get": {
+    "fetch": {
       "messages": {
         "error": "An error occurred while fetching reports."
       }

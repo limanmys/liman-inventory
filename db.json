@@ -26,6 +26,14 @@
   "menus": [
     {
       "name": {
+        "tr": "Gösterge Paneli",
+        "en": "Dashboard"
+      },
+      "url": "#/dashboard",
+      "key": "dashboard"
+    },
+    {
+      "name": {
         "tr": "Varlıklar",
         "en": "Assets"
       },

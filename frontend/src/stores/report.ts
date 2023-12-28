@@ -29,7 +29,7 @@ export const useReportStore = defineStore({
         } else {
           window.$notification.error({
             title: i18n.t("common.error"),
-            content: i18n.t("report.get.messages.error"),
+            content: i18n.t("report.fetch.messages.error"),
             duration: 5000,
           })
         }

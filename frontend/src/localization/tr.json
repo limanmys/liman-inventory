@@ -11,6 +11,8 @@
     "yes": "Evet",
     "no": "Hayır",
     "are_you_sure": "İşlemi gerçekleştirmek istediğinizden emin misiniz?",
+    "show_all": "Tümünü Görüntüle",
+    "last_week": "(Son 1 Hafta)",
     "status": {
       "pending": "Beklemede",
       "in_progress": "Devam Ediyor",
@@ -26,6 +28,41 @@
       "placeholder": "Filtrele",
       "clear": "Temizle",
       "apply": "Uygula"
+    }
+  },
+  "dashboard": {
+    "title": "Gösterge Paneli",
+    "description": "Sistemizin genel durumunu buradan görebilirsiniz.",
+    "assets": {
+      "title": "Varlık Sayısı",
+      "get": {
+        "messages": {
+          "error": "Varlık sayısı getirilirken bir hata oluştu."
+        }
+      }
+    },
+    "discoveries": {
+      "title": "Keşif Sayısı",
+      "get": {
+        "messages": {
+          "error": "Keşif sayısı getirilirken bir hata oluştu."
+        }
+      }
+    },
+    "packages": {
+      "title": "Paket Sayısı",
+      "get": {
+        "messages": {
+          "error": "Paket sayısı getirilirken bir hata oluştu."
+        }
+      }
+    },
+    "added_assets": {
+      "get": {
+        "messages": {
+          "error": "Son eklenen varlıklar getirilirken bir hata oluştu."
+        }
+      }
     }
   },
   "asset": {
@@ -172,7 +209,7 @@
         "message": "Mesaj",
         "created_at": "Oluşturulma Tarihi"
       },
-      "get": {
+      "fetch": {
         "messages": {
           "error": "Raporlar getirilirken bir hata oluştu."
         }

@@ -4,6 +4,11 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/dashboard",
+      name: "dashboard",
+      component: () => import("@/views/pages/Dashboard.vue"),
+    },
+    {
       path: "/assets",
       name: "assets",
       component: () => import("@/views/pages/Assets.vue"),
@@ -40,7 +45,7 @@ const router = createRouter({
     },
     {
       path: "/:pathMatch(.*)*",
-      redirect: "/assets",
+      redirect: "/dashboard",
     },
   ],
 })
