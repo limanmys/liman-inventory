@@ -125,7 +125,7 @@ const columns: IColumn[] = reactive([
           },
           {
             default: () => [
-              h("i", { class: "fas fa-bullseye mr-2" }),
+              h("i", { class: "fas fa-satellite-dish mr-2" }),
               h("span", "Tarama Başlat"),
             ],
           },

@@ -40,7 +40,7 @@ onMounted(() => {
                   @click="router.push({ name: 'assets' })"
                   class="text-uppercase"
                   style="font-size: 11px"
-                  >{{ t("common.show_all") }}
+                  >{{ t("dashboard.assets.button") }}
                   <i class="fas fa-arrow-right ml-1" />
                 </n-button>
               </div>
@@ -51,7 +51,7 @@ onMounted(() => {
           <div class="mt-3 mt-md-0 py-4 px-4">
             <h5 class="text-uppercase fs-13">
               {{ t("dashboard.discoveries.title") }}
-              <i class="fas fa-bullseye fs-18 float-end align-middle" />
+              <i class="fas fa-satellite-dish fs-18 float-end align-middle" />
             </h5>
             <div class="d-flex align-items-center">
               <div class="flex-shrink-0">
@@ -68,7 +68,7 @@ onMounted(() => {
                   @click="router.push({ name: 'discoveries' })"
                   class="text-uppercase"
                   style="font-size: 11px"
-                  >{{ t("common.show_all") }}
+                  >{{ t("dashboard.discoveries.button") }}
                   <i class="fas fa-arrow-right ml-1" />
                 </n-button>
               </div>
@@ -96,7 +96,7 @@ onMounted(() => {
                   @click="router.push({ name: 'packages' })"
                   class="text-uppercase"
                   style="font-size: 11px"
-                  >{{ t("common.show_all") }}
+                  >{{ t("dashboard.packages.button") }}
                   <i class="fas fa-arrow-right ml-1" />
                 </n-button>
               </div>

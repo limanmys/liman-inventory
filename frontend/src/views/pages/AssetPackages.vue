@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { reactive } from "vue"
+import { onMounted, reactive } from "vue"
 import { useI18n } from "vue-i18n"
 import { useRoute } from "vue-router"
+import { useAssetStore } from "@/stores/asset"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import Header from "@/components/UIElements/Header.vue"
 import type { IColumn } from "@/models/Column"
-import { useAssetStore } from "@/stores/asset"
 
 const { t } = useI18n()
 const store = useAssetStore()
 const route = useRoute()
 
-store.show(route.params.id)
+onMounted(() => {
+  store.show(route.params.id)
+})
 
 const columns: IColumn[] = reactive([
   {

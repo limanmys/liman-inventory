@@ -9,12 +9,14 @@ export const useMetricStore = defineStore({
     discovery_count: 0,
     package_count: 0,
     added_assets: [] as { date: string; count: number }[],
+    last_discovery: {} as { time: string },
   }),
   getters: {
     getAssetCount: (state) => state.asset_count,
     getDiscoveryCount: (state) => state.discovery_count,
     getPackageCount: (state) => state.package_count,
     getAddedAssets: (state) => state.added_assets,
+    getLastDiscovery: (state) => state.last_discovery,
   },
   actions: {
     async fetchAssetCount() {
@@ -64,6 +66,19 @@ export const useMetricStore = defineStore({
           window.$notification.error({
             title: i18n.t("common.error"),
             content: i18n.t("dashboard.added_assets.fetch.messages.error"),
+            duration: 5000,
+          })
+        }
+      })
+    },
+    async fetchLastDiscovery() {
+      return http.get(`metrics/latest_discovery_time`).then((res) => {
+        if (res.status == 200) {
+          this.last_discovery = res.data
+        } else {
+          window.$notification.error({
+            title: i18n.t("common.error"),
+            content: i18n.t("dashboard.last_discovery.fetch.messages.error"),
             duration: 5000,
           })
         }
