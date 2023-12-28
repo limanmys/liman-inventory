@@ -55,6 +55,14 @@
       },
       "url": "#/profiles",
       "key": "profiles"
+    },
+    {
+      "name": {
+        "tr": "Raporlar",
+        "en": "Reports"
+      },
+      "url": "#/reports",
+      "key": "reports"
     }
   ]
 }

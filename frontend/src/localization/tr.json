@@ -10,7 +10,13 @@
     "warning": "Uyarı",
     "yes": "Evet",
     "no": "Hayır",
-    "are_you_sure": "İşlemi gerçekleştirmek istediğinizden emin misiniz?"
+    "are_you_sure": "İşlemi gerçekleştirmek istediğinizden emin misiniz?",
+    "status": {
+      "pending": "Beklemede",
+      "in_progress": "Devam Ediyor",
+      "done": "Tamamlandı",
+      "error": "Hata"
+    }
   },
   "table": {
     "search": {
@@ -130,7 +136,7 @@
   },
   "package": {
     "title": "Paketler",
-    "description": "Paketlerinizi ve yüklü oldukları makine sayılarını görüntüleyebilirsiniz.",
+    "description": "Paketlerinizi ve yüklü oldukları makine sayılarını görüntüleyebilirsiniz. Ayrıca PDF/CSV raporlar oluşturabilirsiniz.",
     "table": {
       "name": "Adı",
       "count": "Makine Sayısı"
@@ -138,6 +144,41 @@
     "fetch": {
       "messages": {
         "error": "Paketler getirilirken bir hata oluştu."
+      }
+    },
+    "report": {
+      "title": "Raporlar",
+      "description": "Burada önceki raporlarınızı görüntüleyebilir ve indirebilirsiniz.",
+      "table": {
+        "report_type": "Rapor Türü",
+        "file_type": "Dosya Türü",
+        "status": "Durum",
+        "message": "Mesaj",
+        "created_at": "Oluşturulma Tarihi"
+      },
+      "get": {
+        "messages": {
+          "error": "Raporlar getirilirken bir hata oluştu."
+        }
+      },
+      "create": {
+        "title": "Rapor Oluştur",
+        "messages": {
+          "success": "Rapor isteği başarıyla gönderildi. Raporunuzu raporlar sayfasında görüntüleyebilirsiniz.",
+          "error": "Rapor isteği gönderilirken bir hata oluştu."
+        }
+      },
+      "download": {
+        "title": "Raporu İndir",
+        "messages": {
+          "success": "Rapor başarıyla indirildi.",
+          "error": "Rapor indirilirken bir hata oluştu."
+        }
+      },
+      "type": {
+        "package": "Paketler",
+        "asset": "Varlıklar",
+        "asset_packages": "Varlığın Paketleri"
       }
     }
   }

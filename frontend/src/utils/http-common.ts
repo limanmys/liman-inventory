@@ -97,7 +97,7 @@ export class HttpClient {
       {
         ...data,
         lmntargetFunction: url,
-        type: "post",
+        type: "get",
         endpoint,
       },
       {

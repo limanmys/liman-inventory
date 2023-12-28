@@ -1,0 +1,4 @@
+[
+  { "label": "CSV", "value": "csv" },
+  { "label": "PDF", "value": "pdf" }
+]

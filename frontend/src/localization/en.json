@@ -10,7 +10,13 @@
     "warning": "Warning",
     "yes": "Yes",
     "no": "No",
-    "are_you_sure": "Are you sure you want to proceed with the operation?"
+    "are_you_sure": "Are you sure you want to proceed with the operation?",
+    "status": {
+      "pending": "Pending",
+      "in_progress": "In Progress",
+      "done": "Done",
+      "error": "Error"
+    }
   },
   "table": {
     "search": {
@@ -95,12 +101,6 @@
       "message": "Message",
       "updated_at": "Last Scan"
     },
-    "status": {
-      "pending": "Pending",
-      "in_progress": "In Progress",
-      "done": "Done",
-      "error": "Error"
-    },
     "fetch": {
       "messages": {
         "error": "An error occurred while fetching discoveries."
@@ -136,7 +136,7 @@
   },
   "package": {
     "title": "Packages",
-    "description": "You can view your packages and their machine counts here.",
+    "description": "You can view your packages and their machine counts here. You can also create PDF/CSV reports.",
     "table": {
       "name": "Name",
       "count": "Machine Count"
@@ -145,6 +145,41 @@
       "messages": {
         "error": "An error occurred while fetching packages."
       }
+    }
+  },
+  "report": {
+    "title": "Reports",
+    "description": "You can view your previous reports and download them here.",
+    "table": {
+      "report_type": "Report Type",
+      "file_type": "File Type",
+      "status": "Status",
+      "message": "Message",
+      "created_at": "Created At"
+    },
+    "get": {
+      "messages": {
+        "error": "An error occurred while fetching reports."
+      }
+    },
+    "create": {
+      "title": "Create Report",
+      "messages": {
+        "success": "Report request sent successfully. You can view your report in the reports page.",
+        "error": "An error occurred while sending report request."
+      }
+    },
+    "download": {
+      "title": "Download Report",
+      "messages": {
+        "success": "Report downloaded successfully.",
+        "error": "An error occurred while downloading report."
+      }
+    },
+    "type": {
+      "package": "Packages",
+      "asset": "Assets",
+      "asset_packages": "Asset's Packages"
     }
   }
 }

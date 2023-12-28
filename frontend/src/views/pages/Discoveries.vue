@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { h, reactive } from "vue"
 import { useI18n } from "vue-i18n"
+import { NButton, NTag } from "naive-ui"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import DropdownMenu from "@/components/Table/DropdownMenu.vue"
 import DiscoveryModal from "@/views/modals/Discovery.vue"
@@ -9,7 +10,6 @@ import useEmitter from "@/utils/emitter"
 import type { IColumn } from "@/models/Column"
 import type { IDiscovery } from "@/models/Discovery"
 import Header from "@/components/UIElements/Header.vue"
-import { NButton, NTag } from "naive-ui"
 
 const { t } = useI18n()
 const store = useDiscoveryStore()
@@ -43,10 +43,10 @@ const columns: IColumn[] = reactive([
       tooltip: true,
     },
     filterOptions: [
-      { label: t(`discovery.status.in_progress`), value: "in_progress" },
-      { label: t(`discovery.status.pending`), value: "pending" },
-      { label: t(`discovery.status.done`), value: "done" },
-      { label: t(`discovery.status.error`), value: "error" },
+      { label: t(`common.status.in_progress`), value: "in_progress" },
+      { label: t(`common.status.pending`), value: "pending" },
+      { label: t(`common.status.done`), value: "done" },
+      { label: t(`common.status.error`), value: "error" },
     ],
     filter(value: string, row: IDiscovery) {
       return row.discovery_status === value
@@ -62,7 +62,7 @@ const columns: IColumn[] = reactive([
           {
             default: () => [
               h("i", { class: "fas fa-spinner fa-spin mr-2" }),
-              t(`discovery.status.${row.discovery_status}`),
+              t(`common.status.${row.discovery_status}`),
             ],
           },
         )
@@ -73,7 +73,7 @@ const columns: IColumn[] = reactive([
           {
             default: () => [
               h("i", { class: "fas fa-circle-check mr-2" }),
-              t(`discovery.status.${row.discovery_status}`),
+              t(`common.status.${row.discovery_status}`),
             ],
           },
         )
@@ -84,7 +84,7 @@ const columns: IColumn[] = reactive([
           {
             default: () => [
               h("i", { class: "fas fa-circle-exclamation mr-2" }),
-              t(`discovery.status.${row.discovery_status}`),
+              t(`common.status.${row.discovery_status}`),
             ],
           },
         )

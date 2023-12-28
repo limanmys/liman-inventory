@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { h, reactive } from "vue"
 import { useI18n } from "vue-i18n"
+import { useProfileStore } from "@/stores/profile"
+import useEmitter from "@/utils/emitter"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import DropdownMenu from "@/components/Table/DropdownMenu.vue"
 import ProfileModal from "@/views/modals/Profile.vue"
-import { useProfileStore } from "@/stores/profile"
-import useEmitter from "@/utils/emitter"
 import type { IColumn } from "@/models/Column"
 import type { IProfile } from "@/models/Profile"
 import Header from "@/components/UIElements/Header.vue"

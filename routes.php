@@ -6,4 +6,5 @@ return [
 
     // Request routes
     "apiProxy" => "RequestController@apiProxy",
+    "downloadFile" => "FileController@downloadFile",
 ];

@@ -36,5 +36,22 @@ export const usePackageStore = defineStore({
         }
       })
     },
+    async report(file_type: string) {
+      return http.get(`packages/report/${file_type}`).then((res) => {
+        if (res.status == 200) {
+          window.$notification.success({
+            title: i18n.t("common.success"),
+            content: i18n.t("report.create.messages.success"),
+            duration: 3000,
+          })
+        } else {
+          window.$notification.error({
+            title: i18n.t("common.error"),
+            content: i18n.t("report.create.messages.error"),
+            duration: 5000,
+          })
+        }
+      })
+    },
   },
 })
