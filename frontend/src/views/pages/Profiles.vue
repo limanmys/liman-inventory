@@ -70,7 +70,12 @@ const columns: IColumn[] = reactive([
 
 <template>
   <Header :title="t('profile.title')" :description="t('profile.description')" />
-  <AsyncStore :dispatcher="store.fetch" :data="store.get" :columns="columns">
+  <AsyncStore
+    :dispatcher="store.fetch"
+    :data="store.get"
+    :columns="columns"
+    :pageSize="10"
+  >
     <template #buttons>
       <n-button type="primary" @click="emitter.emit('showProfileModal')">
         <i class="fas fa-plus mr-2" />

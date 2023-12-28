@@ -11,12 +11,14 @@ export const useAssetStore = defineStore({
   state: () => ({
     filter: {} as IFilter,
     assets: {} as IPaginator<IAsset>,
+    asset: {} as IAsset,
 
     pkg_filter: {} as IFilter,
     packages: {} as IPaginator<IPackage>,
   }),
   getters: {
     get: (state) => state.assets,
+    getAsset: (state) => state.asset,
     getPackages: (state) => state.packages,
   },
   actions: {
@@ -41,6 +43,20 @@ export const useAssetStore = defineStore({
         }
       })
     },
+    async show(id: string | string[]) {
+      return http.get(`assets/${id}`).then((res) => {
+        if (res.status == 200) {
+          this.asset = res.data
+        } else {
+          window.$notification.error({
+            title: i18n.t("common.error"),
+            content: i18n.t("asset.show.messages.error"),
+            duration: 5000,
+          })
+        }
+      })
+    },
+
     async fetchPackages(payload: IFilter = {} as IFilter, id: string) {
       let q = payload
       if (Object.keys(payload).length < 1) {

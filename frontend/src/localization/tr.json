@@ -30,11 +30,11 @@
   },
   "asset": {
     "title": "Varlıklar",
-    "description": "Keşfedilen varlıklarınızı görüntüleyin.",
+    "description": "Keşfedilen varlıklarınızı sağlayıcıları ve modelleriyle birlikte burada görebilir, paketlerini görüntüleyebilirsiniz.",
     "table": {
       "hostname": "Hostname",
       "address": "Adres",
-      "vendor": "Üretici",
+      "vendor": "Sağlayıcı",
       "model": "Model",
       "serial_number": "Seri Numarası",
       "updated_at": "Güncellenme Tarihi"
@@ -44,9 +44,14 @@
         "error": "Varlıklar getirilirken bir hata oluştu."
       }
     },
+    "show": {
+      "messages": {
+        "error": "Varlık getirilirken bir hata oluştu."
+      }
+    },
     "package": {
       "title": "Paketler",
-      "description": "Burada varlığınızın paketlerini görüntüleyebilirsiniz.",
+      "description": "Varlığınızın paketlerini sağlayıcıları ve versiyonlarıyla birlikte burada görebilirsiniz.",
       "fetch": {
         "messages": {
           "error": "Varlığın paketleri getirilirken bir hata oluştu."
@@ -148,7 +153,7 @@
     "description": "Paketlerinizi ve yüklü oldukları makine sayılarını görüntüleyebilirsiniz. Ayrıca PDF/CSV raporlar oluşturabilirsiniz.",
     "table": {
       "name": "Adı",
-      "vendor": "Üretici",
+      "vendor": "Sağlayıcı",
       "version": "Versiyon",
       "count": "Makine Sayısı"
     },

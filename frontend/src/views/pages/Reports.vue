@@ -179,5 +179,10 @@ const columns: IColumn[] = reactive([
 
 <template>
   <Header :title="t('report.title')" :description="t('report.description')" />
-  <AsyncStore :dispatcher="store.fetch" :data="store.get" :columns="columns" />
+  <AsyncStore
+    :dispatcher="store.fetch"
+    :data="store.get"
+    :columns="columns"
+    :pageSize="10"
+  />
 </template>

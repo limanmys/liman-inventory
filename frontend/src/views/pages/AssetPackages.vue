@@ -11,6 +11,8 @@ const { t } = useI18n()
 const store = useAssetStore()
 const route = useRoute()
 
+store.show(route.params.id)
+
 const columns: IColumn[] = reactive([
   {
     title: t("package.table.name"),
@@ -48,12 +50,14 @@ const columns: IColumn[] = reactive([
 <template>
   <Header :description="t('asset.package.description')">
     <template #header>
-      <n-space>
-        <n-button size="huge" text @click="$router.back()">
-          <i class="fas fa-arrow-left mr-2" />
-        </n-button>
-        {{ t("asset.package.title") }}
-      </n-space>
+      <n-button size="huge" text @click="$router.back()">
+        <i class="fas fa-arrow-left mr-3" />
+      </n-button>
+      <i class="fab fa-windows mr-2" />
+      <n-text underline>
+        {{ `${store.getAsset.hostname}` }}
+      </n-text>
+      {{ t("asset.package.title") }}
     </template>
   </Header>
 

@@ -44,9 +44,14 @@
         "error": "An error occurred while fetching assets."
       }
     },
+    "show": {
+      "messages": {
+        "error": "An error occurred while fetching asset."
+      }
+    },
     "package": {
       "title": "Packages",
-      "description": "You can view your asset's packages here.",
+      "description": "You can see your discovered assets with their vendors and models, view their packages.",
       "fetch": {
         "messages": {
           "error": "An error occurred while fetching asset packages."

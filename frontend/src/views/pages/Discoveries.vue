@@ -155,7 +155,12 @@ const columns: IColumn[] = reactive([
     :title="t('discovery.title')"
     :description="t('discovery.description')"
   />
-  <AsyncStore :dispatcher="store.fetch" :data="store.get" :columns="columns">
+  <AsyncStore
+    :dispatcher="store.fetch"
+    :data="store.get"
+    :columns="columns"
+    :pageSize="10"
+  >
     <template #buttons>
       <n-button type="primary" @click="emitter.emit('showDiscoveryModal')">
         <i class="fas fa-plus mr-2" />
