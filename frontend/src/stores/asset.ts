@@ -4,15 +4,20 @@ import http from "@/utils/http-common"
 import type { IAsset } from "@/models/Asset"
 import type { IFilter } from "@/models/Filter"
 import type { IPaginator } from "@/models/Paginator"
+import type { IPackage } from "@/models/Package"
 
 export const useAssetStore = defineStore({
   id: "asset",
   state: () => ({
     filter: {} as IFilter,
     assets: {} as IPaginator<IAsset>,
+
+    pkg_filter: {} as IFilter,
+    packages: {} as IPaginator<IPackage>,
   }),
   getters: {
     get: (state) => state.assets,
+    getPackages: (state) => state.packages,
   },
   actions: {
     async fetch(payload: IFilter = {} as IFilter) {
@@ -31,6 +36,27 @@ export const useAssetStore = defineStore({
           window.$notification.error({
             title: i18n.t("common.error"),
             content: i18n.t("asset.fetch.messages.error"),
+            duration: 5000,
+          })
+        }
+      })
+    },
+    async fetchPackages(payload: IFilter = {} as IFilter, id: string) {
+      let q = payload
+      if (Object.keys(payload).length < 1) {
+        q = this.pkg_filter
+      } else {
+        this.pkg_filter = q
+      }
+      const query = new URLSearchParams(q as Record<string, string>).toString()
+
+      return http.get(`assets/packages/${id}?${query}`).then((res) => {
+        if (res.status == 200) {
+          this.packages = res.data
+        } else {
+          window.$notification.error({
+            title: i18n.t("common.error"),
+            content: i18n.t("asset.package.fetch.messages.error"),
             duration: 5000,
           })
         }

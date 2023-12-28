@@ -6,6 +6,8 @@ import type { IColumn } from "@/models/Column"
 import { useAssetStore } from "@/stores/asset"
 import Header from "@/components/UIElements/Header.vue"
 import type { IAsset } from "@/models/Asset"
+import { NButton } from "naive-ui"
+import router from "@/router"
 
 const { t } = useI18n()
 const store = useAssetStore()
@@ -21,7 +23,22 @@ const columns: IColumn[] = reactive([
       tooltip: true,
     },
     render: (row: IAsset) => {
-      return [h("i", { class: "fab fa-windows mr-2" }), row.hostname]
+      return [
+        h("i", { class: "fab fa-windows mr-2" }),
+        row.hostname,
+        h(
+          NButton,
+          {
+            text: true,
+            size: "small",
+            type: "primary",
+            class: "ml-2",
+            onClick: () =>
+              router.push({ name: "asset", params: { id: row.id } }),
+          },
+          { default: () => h("i", { class: "fas fa-link" }) },
+        ),
+      ]
     },
   },
   {

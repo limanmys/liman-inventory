@@ -43,6 +43,15 @@
       "messages": {
         "error": "Varlıklar getirilirken bir hata oluştu."
       }
+    },
+    "package": {
+      "title": "Paketler",
+      "description": "Burada varlığınızın paketlerini görüntüleyebilirsiniz.",
+      "fetch": {
+        "messages": {
+          "error": "Varlığın paketleri getirilirken bir hata oluştu."
+        }
+      }
     }
   },
   "profile": {
@@ -139,6 +148,8 @@
     "description": "Paketlerinizi ve yüklü oldukları makine sayılarını görüntüleyebilirsiniz. Ayrıca PDF/CSV raporlar oluşturabilirsiniz.",
     "table": {
       "name": "Adı",
+      "vendor": "Üretici",
+      "version": "Versiyon",
       "count": "Makine Sayısı"
     },
     "fetch": {

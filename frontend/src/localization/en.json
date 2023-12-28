@@ -43,6 +43,15 @@
       "messages": {
         "error": "An error occurred while fetching assets."
       }
+    },
+    "package": {
+      "title": "Packages",
+      "description": "You can view your asset's packages here.",
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching asset packages."
+        }
+      }
     }
   },
   "profile": {
@@ -139,6 +148,8 @@
     "description": "You can view your packages and their machine counts here. You can also create PDF/CSV reports.",
     "table": {
       "name": "Name",
+      "vendor": "Vendor",
+      "version": "Version",
       "count": "Machine Count"
     },
     "fetch": {
