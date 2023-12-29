@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { h, reactive } from "vue"
 import { useI18n } from "vue-i18n"
-import AsyncStore from "@/components/Table/AsyncStore.vue"
-import type { IColumn } from "@/models/Column"
-import { useAssetStore } from "@/stores/asset"
-import Header from "@/components/UIElements/Header.vue"
-import type { IAsset } from "@/models/Asset"
 import { NButton } from "naive-ui"
+import AsyncStore from "@/components/Table/AsyncStore.vue"
+import { useAssetStore } from "@/stores/asset"
 import router from "@/router"
+import type { IColumn } from "@/models/Column"
+import type { IAsset } from "@/models/Asset"
+import Header from "@/components/UIElements/Header.vue"
 
 const { t } = useI18n()
 const store = useAssetStore()
@@ -23,22 +23,7 @@ const columns: IColumn[] = reactive([
       tooltip: true,
     },
     render: (row: IAsset) => {
-      return [
-        h("i", { class: "fab fa-windows mr-2" }),
-        row.hostname,
-        h(
-          NButton,
-          {
-            text: true,
-            size: "small",
-            type: "primary",
-            class: "ml-2",
-            onClick: () =>
-              router.push({ name: "asset", params: { id: row.id } }),
-          },
-          { default: () => h("i", { class: "fas fa-link" }) },
-        ),
-      ]
+      return [h("i", { class: "fab fa-windows mr-2" }), row.hostname]
     },
   },
   {
@@ -79,6 +64,29 @@ const columns: IColumn[] = reactive([
     resizable: true,
     ellipsis: {
       tooltip: true,
+    },
+  },
+  {
+    title: t("asset.table.package_count"),
+    key: "package_count",
+    filterable: true,
+    sorter: "default",
+    resizable: true,
+    ellipsis: {
+      tooltip: true,
+    },
+    render: (row: IAsset) => {
+      return h(
+        NButton,
+        {
+          text: true,
+          size: "small",
+          type: "primary",
+          class: "ml-2",
+          onClick: () => router.push({ name: "asset", params: { id: row.id } }),
+        },
+        { default: () => row.package_count },
+      )
     },
   },
   {

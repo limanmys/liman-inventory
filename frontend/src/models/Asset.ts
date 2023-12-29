@@ -8,6 +8,7 @@ export interface IAsset {
   hostname: string
   address: string
   serial_number: string
+  package_count: number
   vendor: string
   model: string
   discovery_id: string

@@ -102,6 +102,7 @@
       "vendor": "Sağlayıcı",
       "model": "Model",
       "serial_number": "Seri Numarası",
+      "package_count": "Paket Sayısı",
       "updated_at": "Güncellenme Tarihi"
     },
     "fetch": {

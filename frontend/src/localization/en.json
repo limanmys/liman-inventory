@@ -102,6 +102,7 @@
       "vendor": "Vendor",
       "model": "Model",
       "serial_number": "Serial Number",
+      "package_count": "Package Count",
       "updated_at": "Updated At"
     },
     "fetch": {
