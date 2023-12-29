@@ -75,6 +75,22 @@
           "error": "Son keşif getirilirken bir hata oluştu."
         }
       }
+    },
+    "vendor_counts": {
+      "title": "Sağlayıcı Dağılımı",
+      "fetch": {
+        "messages": {
+          "error": "Sağlayıcı dağılımı getirilirken bir hata oluştu."
+        }
+      }
+    },
+    "most_used_packages": {
+      "title": "En Çok Kullanılan Paketler (İlk 5)",
+      "fetch": {
+        "messages": {
+          "error": "En çok kullanılan paketler getirilirken bir hata oluştu."
+        }
+      }
     }
   },
   "asset": {
@@ -199,12 +215,12 @@
   },
   "package": {
     "title": "Paketler",
-    "description": "Paketlerinizi ve yüklü oldukları makine sayılarını görüntüleyebilirsiniz. Ayrıca PDF/CSV raporlar oluşturabilirsiniz.",
+    "description": "Paketlerinizi ve yüklü oldukları varlık sayılarını görüntüleyebilirsiniz. Ayrıca PDF/CSV raporlar oluşturabilirsiniz.",
     "table": {
       "name": "Adı",
       "vendor": "Sağlayıcı",
       "version": "Versiyon",
-      "count": "Makine Sayısı"
+      "count": "Varlık Sayısı"
     },
     "fetch": {
       "messages": {

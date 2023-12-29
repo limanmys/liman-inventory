@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue"
+import { onMounted } from "vue"
 import { useRouter } from "vue-router"
 import { useI18n } from "vue-i18n"
 import { useMetricStore } from "@/stores/metric"
@@ -16,27 +16,32 @@ const store = useMetricStore()
 onMounted(() => {
   store.fetchAddedAssets()
   store.fetchLastDiscovery()
+  store.fetchVendorCounts()
+  store.fetchMostUsedPackages()
 })
 
-const lineOptions = ref({
+const chartOptions = {
+  fontFamily: "Inter",
+  locales: [
+    {
+      name: "tr",
+      options: {
+        ...apexTR,
+      },
+    },
+    {
+      name: "en",
+      options: {
+        ...apexEN,
+      },
+    },
+  ],
+  defaultLocale: document.documentElement.lang,
+}
+
+const lineOptions = {
   chart: {
-    fontFamily: "Inter",
-    locales: [
-      {
-        name: "tr",
-        options: {
-          ...apexTR,
-        },
-      },
-      {
-        name: "en",
-        options: {
-          ...apexEN,
-        },
-      },
-    ],
-    defaultLocale: document.documentElement.lang,
-    height: 250,
+    ...chartOptions,
     type: "line",
     dropShadow: {
       enabled: true,
@@ -68,6 +73,41 @@ const lineOptions = ref({
   yaxis: {
     show: false,
   },
+}
+
+const barOptions = (categories: string[]) => ({
+  chart: {
+    ...chartOptions,
+    type: "bar",
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 2,
+      horizontal: true,
+      distributed: true,
+    },
+  },
+  legend: {
+    show: false,
+  },
+  xaxis: {
+    categories: categories,
+    labels: {
+      formatter: (val: number) => {
+        return val.toFixed(0)
+      },
+    },
+  },
+  tooltip: {
+    y: {
+      formatter: (val: number) => {
+        return val.toString()
+      },
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
 })
 </script>
 
@@ -76,28 +116,29 @@ const lineOptions = ref({
     :title="t('dashboard.title')"
     :description="t('dashboard.description')"
   />
-  <n-grid :cols="2" x-gap="15" y-gap="5">
+  <n-grid :cols="2" x-gap="15" y-gap="15">
     <n-gi :span="2">
       <Metrics />
     </n-gi>
     <n-gi>
       <n-card style="height: 17rem">
-        <template #header>
-          <h5 class="text-uppercase fs-13">
+        <template #default>
+          <h5 class="text-uppercase fs-13 mb-4">
             {{ t("dashboard.assets.title") }}
             <small class="ml-1">{{ t("common.last_week") }}</small>
           </h5>
-        </template>
-        <template #default>
           <apexchart
             type="line"
             height="200"
             :options="lineOptions"
-            class="mt-n4"
+            class="mt-n3"
             :series="[
               {
                 name: t('dashboard.assets.title'),
-                data: store.getAddedAssets.map((m) => [m.date, m.count]),
+                data: store.getAddedAssets.map((item) => [
+                  item.date,
+                  item.count,
+                ]),
               },
             ]"
           ></apexchart>
@@ -132,6 +173,50 @@ const lineOptions = ref({
             </n-button>
           </n-space>
         </div>
+      </n-card>
+    </n-gi>
+    <n-gi>
+      <n-card style="height: 18rem">
+        <template #default>
+          <h5 class="text-uppercase fs-13 mb-4">
+            {{ t("dashboard.vendor_counts.title") }}
+          </h5>
+          <apexchart
+            type="bar"
+            height="225"
+            :options="
+              barOptions(store.getVendorCounts.map((item) => item.vendor))
+            "
+            :series="[
+              {
+                name: t('dashboard.assets.title'),
+                data: store.getVendorCounts.map((item) => item.count),
+              },
+            ]"
+          ></apexchart>
+        </template>
+      </n-card>
+    </n-gi>
+    <n-gi>
+      <n-card style="height: 18rem">
+        <template #default>
+          <h5 class="text-uppercase fs-13 mb-4">
+            {{ t("dashboard.most_used_packages.title") }}
+          </h5>
+          <apexchart
+            type="bar"
+            height="225"
+            :options="
+              barOptions(store.getMostUsedPackages.map((item) => item.name))
+            "
+            :series="[
+              {
+                name: t('dashboard.packages.title'),
+                data: store.getMostUsedPackages.map((item) => item.count),
+              },
+            ]"
+          ></apexchart>
+        </template>
       </n-card>
     </n-gi>
   </n-grid>

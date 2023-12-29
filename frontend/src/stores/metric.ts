@@ -10,6 +10,8 @@ export const useMetricStore = defineStore({
     package_count: 0,
     added_assets: [] as { date: string; count: number }[],
     last_discovery: {} as { time: string },
+    vendor_counts: [] as { vendor: string; count: number }[],
+    most_used_packages: [] as { name: string; count: number }[],
   }),
   getters: {
     getAssetCount: (state) => state.asset_count,
@@ -17,6 +19,8 @@ export const useMetricStore = defineStore({
     getPackageCount: (state) => state.package_count,
     getAddedAssets: (state) => state.added_assets,
     getLastDiscovery: (state) => state.last_discovery,
+    getVendorCounts: (state) => state.vendor_counts,
+    getMostUsedPackages: (state) => state.most_used_packages,
   },
   actions: {
     async fetchAssetCount() {
@@ -79,6 +83,34 @@ export const useMetricStore = defineStore({
           window.$notification.error({
             title: i18n.t("common.error"),
             content: i18n.t("dashboard.last_discovery.fetch.messages.error"),
+            duration: 5000,
+          })
+        }
+      })
+    },
+    async fetchVendorCounts() {
+      return http.get(`metrics/vendor_counts`).then((res) => {
+        if (res.status == 200) {
+          this.vendor_counts = res.data
+        } else {
+          window.$notification.error({
+            title: i18n.t("common.error"),
+            content: i18n.t("dashboard.vendor_counts.fetch.messages.error"),
+            duration: 5000,
+          })
+        }
+      })
+    },
+    async fetchMostUsedPackages() {
+      return http.get(`metrics/most_used_packages`).then((res) => {
+        if (res.status == 200) {
+          this.most_used_packages = res.data
+        } else {
+          window.$notification.error({
+            title: i18n.t("common.error"),
+            content: i18n.t(
+              "dashboard.most_used_packages.fetch.messages.error",
+            ),
             duration: 5000,
           })
         }

@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <n-card class="homepage-widget mb-2" content-style="padding: 0">
+  <n-card class="homepage-widget" content-style="padding: 0">
     <div class="card-body p-0">
       <div class="row row-cols-xxl-5 row-cols-md-3 row-cols-1 g-0">
         <div class="col">

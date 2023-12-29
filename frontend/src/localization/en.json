@@ -75,6 +75,22 @@
           "error": "An error occurred while fetching the last discovery."
         }
       }
+    },
+    "vendor_counts": {
+      "title": "Vendor Distribution",
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching vendor distribution."
+        }
+      }
+    },
+    "most_used_packages": {
+      "title": "Most Used Packages (Top 5)",
+      "fetch": {
+        "messages": {
+          "error": "An error occurred while fetching most used packages."
+        }
+      }
     }
   },
   "asset": {
@@ -199,12 +215,12 @@
   },
   "package": {
     "title": "Packages",
-    "description": "You can view your packages and their machine counts here. You can also create PDF/CSV reports.",
+    "description": "You can view your packages and their asset counts here. You can also create PDF/CSV reports.",
     "table": {
       "name": "Name",
       "vendor": "Vendor",
       "version": "Version",
-      "count": "Machine Count"
+      "count": "Asset Count"
     },
     "fetch": {
       "messages": {
