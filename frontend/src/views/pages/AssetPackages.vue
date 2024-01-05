@@ -57,10 +57,7 @@ const columns: IColumn[] = reactive([
         <i class="fas fa-arrow-left mr-3" />
       </n-button>
       <i class="fab fa-windows mr-2" />
-      <n-text underline>
-        {{ `${store.getAsset.hostname}` }}
-      </n-text>
-      {{ t("asset.package.title") }}
+      {{ `${store.getAsset.hostname} > ${t("asset.package.title")}` }}
     </template>
   </Header>
 
