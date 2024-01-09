@@ -6,6 +6,9 @@ import AsyncStore from "@/components/Table/AsyncStore.vue"
 import Header from "@/components/UIElements/Header.vue"
 import type { IColumn } from "@/models/Column"
 import fileTypes from "@/utils/data/file_types.json"
+import type { IPackage } from "@/models/Package"
+import { h } from "vue"
+import { NButton, NText } from "naive-ui"
 
 const { t } = useI18n()
 const store = usePackageStore()
@@ -20,6 +23,28 @@ const columns: IColumn[] = reactive([
     resizable: true,
     ellipsis: {
       tooltip: true,
+    },
+  },
+  {
+    title: t("package.table.alternative_package"),
+    key: "alternative_package.name",
+    resizable: true,
+    ellipsis: {
+      tooltip: true,
+    },
+    render: (row: IPackage) => {
+      return row.alternative_package
+        ? h(
+            NButton,
+            {
+              text: true,
+              onClick: () => {
+                window.open(row.alternative_package.url, "_blank")
+              },
+            },
+            h(NText, { underline: true }, row.alternative_package.name),
+          )
+        : "-"
     },
   },
   {

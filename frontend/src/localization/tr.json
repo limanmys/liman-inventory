@@ -221,7 +221,8 @@
       "name": "Adı",
       "vendor": "Sağlayıcı",
       "version": "Versiyon",
-      "count": "Varlık Sayısı"
+      "count": "Varlık Sayısı",
+      "alternative_package": "Alternatif Paket"
     },
     "fetch": {
       "messages": {
