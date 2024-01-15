@@ -3,7 +3,16 @@
   "publisher": "HAVELSAN A.\u015e.",
   "version": "DEV",
   "version_code": 1,
-  "database": [],
+  "database": [
+    {
+      "variable": "api_address",
+      "type": "text",
+      "name": "API Adresi",
+      "required": false,
+      "global": false,
+      "writable": false
+    }
+  ],
   "widgets": [],
   "language": "php",
   "status": 0,
@@ -12,7 +21,7 @@
   "support": "aciklab@havelsan.com.tr",
   "icon": "box-open",
   "require_key": "false",
-  "verification": "verify",
+  "verification": null,
   "dependencies": null,
   "sslPorts": null,
   "display_name": {

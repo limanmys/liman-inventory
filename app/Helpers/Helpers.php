@@ -6,6 +6,10 @@ use GuzzleHttp\Client;
 if (!function_exists('getUrl')) {
 	function getUrl($endpoint = "")
 	{
+		if (extensionDb('api_address')) {
+			return extensionDb('api_address') . "/$endpoint";
+		}
+
 		$tunnel = openTunnel(
 			server()->ip_address,
 			'7806',
