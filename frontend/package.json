@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "0.8.1",
+    "@limanmys/frontend-kit": "^1.0.17",
     "@vueuse/core": "^10.7.0",
     "apexcharts": "^3.44.2",
-    "axios": "^1.6.2",
+    "axios": "^1.6.7",
     "date-fns": "^2.30.0",
     "js-file-download": "^0.4.12",
     "lodash": "^4.17.21",

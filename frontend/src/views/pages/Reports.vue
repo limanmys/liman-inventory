@@ -6,11 +6,11 @@ import { useReportStore } from "@/stores/report"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import fileDownload from "js-file-download"
 import http from "@/utils/http-common"
-import { formatDate } from "@/utils/format-date"
+import { formatDate } from "@limanmys/frontend-kit"
 import fileTypes from "@/utils/data/file_types.json"
 import Header from "@/components/UIElements/Header.vue"
 import type { IReport } from "@/models/Report"
-import type { IColumn } from "@/models/Column"
+import type { IColumn } from "@limanmys/frontend-kit"
 
 const { t } = useI18n()
 const store = useReportStore()

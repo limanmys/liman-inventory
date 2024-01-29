@@ -5,11 +5,13 @@ import type { FormInst } from "naive-ui"
 import { useDiscoveryStore } from "@/stores/discovery"
 import useEmitter from "@/utils/emitter"
 import type { IDiscoveryCreate } from "@/models/Discovery"
-import ProfileSelect from "@/components/Select/Profile.vue"
+import { AsyncSelect } from "@limanmys/frontend-kit"
+import { useProfileStore } from "@/stores/profile"
 
 const { t } = useI18n()
 const emitter = useEmitter()
 const store = useDiscoveryStore()
+const profileStore = useProfileStore()
 
 const formRef = ref<FormInst | null>(null)
 const show = ref(false)
@@ -65,7 +67,14 @@ const submit = (e: MouseEvent) => {
           :label="t('discovery.create.inputs.profile')"
           path="profile_id"
         >
-          <ProfileSelect v-model:profile="values.profile_id" />
+          <AsyncSelect
+            v-model:value="values.profile_id"
+            :dispatcher="profileStore.fetch"
+            :data="profileStore.get.records"
+            labelField="name"
+            valueField="id"
+            :placeholder="t('common.type_to_search')"
+          />
         </n-form-item>
       </n-form>
       <template #footer>

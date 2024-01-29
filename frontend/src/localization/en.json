@@ -13,6 +13,7 @@
     "are_you_sure": "Are you sure you want to proceed with the operation?",
     "not_found": "Not Found",
     "last_week": "(Last Week)",
+    "type_to_search": "Type to search",
     "status": {
       "pending": "Pending",
       "in_progress": "In Progress",

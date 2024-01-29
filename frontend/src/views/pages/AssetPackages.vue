@@ -3,7 +3,7 @@ import { onMounted, reactive } from "vue"
 import { useI18n } from "vue-i18n"
 import { useRoute, useRouter } from "vue-router"
 import { useAssetStore } from "@/stores/asset"
-import type { IColumn } from "@/models/Column"
+import type { IColumn } from "@limanmys/frontend-kit"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import Header from "@/components/UIElements/Header.vue"
 

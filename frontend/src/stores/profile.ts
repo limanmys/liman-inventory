@@ -1,8 +1,7 @@
 import { defineStore } from "pinia"
 import http from "@/utils/http-common"
 import { i18n } from "@/utils/i18n"
-import type { IFilter } from "@/models/Filter"
-import type { IPaginator } from "@/models/Paginator"
+import type { IFilter, IPaginator } from "@limanmys/frontend-kit"
 import type { IProfile, IProfileCreate } from "@/models/Profile"
 
 export const useProfileStore = defineStore({

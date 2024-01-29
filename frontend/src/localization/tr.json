@@ -13,6 +13,7 @@
     "are_you_sure": "İşlemi gerçekleştirmek istediğinizden emin misiniz?",
     "last_week": "(Son 1 Hafta)",
     "not_found": "Bulunamadı",
+    "type_to_search": "Aramak için yazın...",
     "status": {
       "pending": "Beklemede",
       "in_progress": "Devam Ediyor",
@@ -228,41 +229,41 @@
       "messages": {
         "error": "Paketler getirilirken bir hata oluştu."
       }
+    }
+  },
+  "report": {
+    "title": "Raporlar",
+    "description": "Burada önceki raporlarınızı görüntüleyebilir ve indirebilirsiniz.",
+    "table": {
+      "report_type": "Rapor Türü",
+      "file_type": "Dosya Türü",
+      "status": "Durum",
+      "message": "Mesaj",
+      "created_at": "Oluşturulma Tarihi"
     },
-    "report": {
-      "title": "Raporlar",
-      "description": "Burada önceki raporlarınızı görüntüleyebilir ve indirebilirsiniz.",
-      "table": {
-        "report_type": "Rapor Türü",
-        "file_type": "Dosya Türü",
-        "status": "Durum",
-        "message": "Mesaj",
-        "created_at": "Oluşturulma Tarihi"
-      },
-      "fetch": {
-        "messages": {
-          "error": "Raporlar getirilirken bir hata oluştu."
-        }
-      },
-      "create": {
-        "title": "Rapor Oluştur",
-        "messages": {
-          "success": "Rapor isteği başarıyla gönderildi. Raporunuzu raporlar sayfasında görüntüleyebilirsiniz.",
-          "error": "Rapor isteği gönderilirken bir hata oluştu."
-        }
-      },
-      "download": {
-        "title": "Raporu İndir",
-        "messages": {
-          "success": "Rapor başarıyla indirildi.",
-          "error": "Rapor indirilirken bir hata oluştu."
-        }
-      },
-      "type": {
-        "package": "Paketler",
-        "asset": "Varlıklar",
-        "asset_packages": "Varlığın Paketleri"
+    "fetch": {
+      "messages": {
+        "error": "Raporlar getirilirken bir hata oluştu."
       }
+    },
+    "create": {
+      "title": "Rapor Oluştur",
+      "messages": {
+        "success": "Rapor isteği başarıyla gönderildi. Raporunuzu raporlar sayfasında görüntüleyebilirsiniz.",
+        "error": "Rapor isteği gönderilirken bir hata oluştu."
+      }
+    },
+    "download": {
+      "title": "Raporu İndir",
+      "messages": {
+        "success": "Rapor başarıyla indirildi.",
+        "error": "Rapor indirilirken bir hata oluştu."
+      }
+    },
+    "type": {
+      "package": "Paketler",
+      "asset": "Varlıklar",
+      "asset_packages": "Varlığın Paketleri"
     }
   }
 }

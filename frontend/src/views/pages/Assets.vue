@@ -5,7 +5,7 @@ import { NButton } from "naive-ui"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import { useAssetStore } from "@/stores/asset"
 import router from "@/router"
-import type { IColumn } from "@/models/Column"
+import type { IColumn } from "@limanmys/frontend-kit"
 import type { IAsset } from "@/models/Asset"
 import Header from "@/components/UIElements/Header.vue"
 

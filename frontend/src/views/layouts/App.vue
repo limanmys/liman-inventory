@@ -4,7 +4,7 @@ import AppProvider from "./AppProvider.vue"
 import Navigation from "./Navigation.vue"
 import { ref } from "vue"
 import VErrorBoundary from "vue-error-boundary"
-import Errors from "./Errors.vue"
+import { Error } from "@limanmys/frontend-kit"
 
 const err = ref()
 const stack = ref()
@@ -23,7 +23,7 @@ const errorCapture = (error: any) => {
           <VErrorBoundary stop-propagation @error-captured="errorCapture">
             <template #boundary="{ hasError }">
               <div v-if="hasError">
-                <Errors :error="err" :stack="stack" />
+                <Error :error="err" :stack="stack" />
               </div>
               <template v-else>
                 <component :is="Component" />
@@ -38,5 +38,5 @@ const errorCapture = (error: any) => {
 </template>
 
 <style lang="scss">
-@import "@/styles/custom.scss";
+@import "@/../node_modules/@limanmys/frontend-kit/dist/style.css";
 </style>

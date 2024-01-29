@@ -2,8 +2,7 @@ import { defineStore } from "pinia"
 import { i18n } from "@/utils/i18n"
 import http from "@/utils/http-common"
 import type { IAsset } from "@/models/Asset"
-import type { IFilter } from "@/models/Filter"
-import type { IPaginator } from "@/models/Paginator"
+import type { IFilter, IPaginator } from "@limanmys/frontend-kit"
 import type { IPackage } from "@/models/Package"
 
 export const useAssetStore = defineStore({

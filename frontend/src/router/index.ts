@@ -39,11 +39,6 @@ const router = createRouter({
       component: () => import("@/views/pages/Reports.vue"),
     },
     {
-      path: "/error",
-      name: "error",
-      component: () => import("@/views/layouts/Errors.vue"),
-    },
-    {
       path: "/:pathMatch(.*)*",
       redirect: "/dashboard",
     },

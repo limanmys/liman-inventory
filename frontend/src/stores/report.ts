@@ -1,6 +1,5 @@
-import type { IFilter } from "@/models/Filter"
 import type { IReport } from "@/models/Report"
-import type { IPaginator } from "@/models/Paginator"
+import type { IFilter, IPaginator } from "@limanmys/frontend-kit"
 import http from "@/utils/http-common"
 import { i18n } from "@/utils/i18n"
 import { defineStore } from "pinia"

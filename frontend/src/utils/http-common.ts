@@ -1,7 +1,7 @@
-import type { IData } from "@/models/Data"
+import type { IData } from "@limanmys/frontend-kit"
 import type { AxiosInstance, AxiosResponse } from "axios"
 import { reactive } from "vue"
-import AxiosClient from "./axios-client"
+import { AxiosClient } from "@limanmys/frontend-kit"
 
 export class HttpClient {
   axiosClient!: AxiosInstance

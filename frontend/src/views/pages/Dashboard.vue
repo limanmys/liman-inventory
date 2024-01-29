@@ -5,9 +5,7 @@ import { useI18n } from "vue-i18n"
 import { useMetricStore } from "@/stores/metric"
 import Header from "@/components/UIElements/Header.vue"
 import Metrics from "@/components/UIElements/Metrics.vue"
-import apexEN from "@/localization/apex/en.js"
-import apexTR from "@/localization/apex/tr.js"
-import { formatDate } from "@/utils/format-date"
+import { ApexLocales, formatDate } from "@limanmys/frontend-kit"
 
 const { t } = useI18n()
 const router = useRouter()
@@ -22,20 +20,7 @@ onMounted(() => {
 
 const chartOptions = {
   fontFamily: "Inter",
-  locales: [
-    {
-      name: "tr",
-      options: {
-        ...apexTR,
-      },
-    },
-    {
-      name: "en",
-      options: {
-        ...apexEN,
-      },
-    },
-  ],
+  locales: ApexLocales,
   defaultLocale: document.documentElement.lang,
 }
 

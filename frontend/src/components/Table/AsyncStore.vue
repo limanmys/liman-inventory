@@ -4,11 +4,12 @@ import { useI18n } from "vue-i18n"
 import { useRoute } from "vue-router"
 import { isEqual } from "lodash"
 import { NButton, NDataTable, NInput, NSpace } from "naive-ui"
-import ColumnSelector from "@/components/Table/ColumnSelector.vue"
-import type { IData } from "@/models/Data"
-import type { IFilter } from "@/models/Filter"
-import type { IPaginator } from "@/models/Paginator"
-import { formatDate } from "@/utils/format-date"
+import type { IData, IFilter, IPaginator } from "@limanmys/frontend-kit"
+import {
+  formatDate,
+  createDebounce,
+  ColumnSelector,
+} from "@limanmys/frontend-kit"
 
 export interface Props {
   dispatcher: (payload?: IFilter, ...args: any) => Promise<any>
@@ -145,15 +146,6 @@ onMounted(() => {
   query(pagination.page)
 })
 
-const createDebounce = () => {
-  let timeout: number | undefined = 0
-  return function (fnc: () => void, delayMs: any) {
-    clearTimeout(timeout)
-    timeout = setTimeout(() => {
-      fnc()
-    }, delayMs || 500)
-  }
-}
 const searchDebounce = createDebounce()
 
 const handleSorterChange = (sorter: any) => {
@@ -303,7 +295,7 @@ const selectedKeys = computed({
           {{ t("common.refresh") }}
         </n-tooltip>
 
-        <ColumnSelector :columns="columns" @change="columns = $event" />
+        <ColumnSelector :columns="columns" />
       </n-space>
     </div>
   </n-space>
