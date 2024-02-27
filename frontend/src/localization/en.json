@@ -102,6 +102,7 @@
       "address": "Address",
       "vendor": "Vendor",
       "model": "Model",
+      "bios_version": "BIOS Version",
       "serial_number": "Serial Number",
       "package_count": "Package Count",
       "updated_at": "Updated At"

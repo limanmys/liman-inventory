@@ -57,6 +57,16 @@ const columns: IColumn[] = reactive([
     },
   },
   {
+    title: t("asset.table.bios_version"),
+    key: "bios_version",
+    filterable: true,
+    sorter: "default",
+    resizable: true,
+    ellipsis: {
+      tooltip: true,
+    },
+  },
+  {
     title: t("asset.table.serial_number"),
     key: "serial_number",
     filterable: true,

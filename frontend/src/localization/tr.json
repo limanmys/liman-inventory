@@ -102,6 +102,7 @@
       "address": "Adres",
       "vendor": "Sağlayıcı",
       "model": "Model",
+      "bios_version": "BIOS Versiyonu",
       "serial_number": "Seri Numarası",
       "package_count": "Paket Sayısı",
       "updated_at": "Güncellenme Tarihi"
