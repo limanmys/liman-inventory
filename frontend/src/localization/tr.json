@@ -181,7 +181,9 @@
       "profile": "Profil",
       "discovery_status": "Keşif Durumu",
       "message": "Mesaj",
-      "updated_at": "Son Tarama"
+      "updated_at": "Son Tarama",
+      "start_scan": "Tarama Başlat",
+      "read_logs": "Logları Görüntüle"
     },
     "fetch": {
       "messages": {

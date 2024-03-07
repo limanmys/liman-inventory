@@ -181,7 +181,9 @@
       "profile": "Profile",
       "discovery_status": "Discovery Status",
       "message": "Message",
-      "updated_at": "Last Scan"
+      "updated_at": "Last Scan",
+      "start_scan": "Start Scan",
+      "read_logs": "Read Logs"
     },
     "fetch": {
       "messages": {

@@ -5,6 +5,7 @@ import { NButton, NTag } from "naive-ui"
 import AsyncStore from "@/components/Table/AsyncStore.vue"
 import { DropdownMenu } from "@limanmys/frontend-kit"
 import DiscoveryModal from "@/views/modals/Discovery.vue"
+import LogsModal from "@/views/modals/Logs.vue"
 import { useDiscoveryStore } from "@/stores/discovery"
 import useEmitter from "@/utils/emitter"
 import type { IColumn } from "@limanmys/frontend-kit"
@@ -120,18 +121,32 @@ const columns: IColumn[] = reactive([
           {
             size: "small",
             onClick: () => {
-              store.run(row.id)
+              store.run(row.id).then(() => {
+                setTimeout(() => {
+                  emitter.emit("showLogsModal", row.id)
+                }, 500)
+              })
             },
           },
           {
             default: () => [
               h("i", { class: "fas fa-satellite-dish mr-2" }),
-              h("span", "Tarama Başlat"),
+              h("span", t("discovery.table.start_scan")),
             ],
           },
         ),
         h(DropdownMenu, {
           options: [
+            {
+              label: t("discovery.table.read_logs"),
+              key: "read_logs",
+              icon: () => h("i", { class: "fas fa-file-lines" }),
+              props: {
+                onClick: () => {
+                  emitter.emit("showLogsModal", row.id)
+                },
+              },
+            },
             {
               label: t("common.delete"),
               key: "delete",
@@ -169,4 +184,5 @@ const columns: IColumn[] = reactive([
     </template>
   </AsyncStore>
   <DiscoveryModal />
+  <LogsModal />
 </template>
